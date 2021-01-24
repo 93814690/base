@@ -12,17 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author liyf
- * Created in 2020-05-02
  */
 @RestController
 @RequestMapping("/test")
 public class TestController {
-
-    private final HttpServletRequest request;
-
-    public TestController(HttpServletRequest request) {
-        this.request = request;
-    }
 
     @AnonymousInterface
     @GetMapping("/")
@@ -43,7 +36,7 @@ public class TestController {
 
     @AnonymousInterface
     @GetMapping("/login")
-    public String login() {
+    public String login(HttpServletRequest request) {
         UserBO userBo = new UserBO();
         request.getSession().setAttribute("user", userBo);
         return "login";

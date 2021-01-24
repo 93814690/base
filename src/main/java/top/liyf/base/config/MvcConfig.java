@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 
 /**
  * @author liyf
- * Created in 2020-05-02
  */
 @Configuration
 public class MvcConfig implements WebMvcConfigurer {
@@ -24,10 +23,10 @@ public class MvcConfig implements WebMvcConfigurer {
     public static class LocalDateTimeConverter implements Converter<String, LocalDateTime> {
         @Override
         public LocalDateTime convert(String source) {
-            if (StringUtils.isEmpty(source)) {
-                return null;
+            if (StringUtils.hasText(source)) {
+                return LocalDateTimeUtils.convert(source.trim());
             }
-            return LocalDateTimeUtils.convert(source.trim());
+            return null;
         }
     }
 }

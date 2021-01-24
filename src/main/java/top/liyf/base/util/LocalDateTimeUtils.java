@@ -12,7 +12,6 @@ import static java.time.format.DateTimeFormatter.ISO_LOCAL_TIME;
 
 /**
  * @author liyf
- * Created in 2020-05-02
  */
 public class LocalDateTimeUtils {
 

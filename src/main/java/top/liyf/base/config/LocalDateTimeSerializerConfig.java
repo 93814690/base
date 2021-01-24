@@ -11,10 +11,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * JDK8 日期格式化
+ * LocalDateTime 日期格式化
  *
  * @author liyf
- * Created in 2020-05-02
  */
 @Configuration
 public class LocalDateTimeSerializerConfig {

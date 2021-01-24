@@ -16,12 +16,10 @@ import top.liyf.base.result.ResultBean;
 import top.liyf.base.result.ResultCode;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
 
 /**
  * @author liyf
- * Created in 2020-05-02
  */
 @Aspect
 @Component
@@ -59,9 +57,7 @@ public class LoginAspect {
                 return new ResultBean<>(ResultCode.NOT_LOGGED_IN);
             } else {
                 // 跳转登录页面
-                HttpServletResponse response = attributes.getResponse();
-                response.sendRedirect("https://www.baidu.com");
-                return "/login.html";
+                return "login.html";
             }
         }
 

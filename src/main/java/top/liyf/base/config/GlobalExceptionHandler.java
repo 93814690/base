@@ -9,7 +9,6 @@ import top.liyf.base.result.ResultCode;
 
 /**
  * @author liyf
- * Created in 2020-05-02
  */
 @RestControllerAdvice
 @Slf4j

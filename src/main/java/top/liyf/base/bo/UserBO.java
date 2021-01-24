@@ -7,7 +7,6 @@ import java.util.List;
 
 /**
  * @author liyf
- * Created in 2020-05-02
  */
 @Data
 public class UserBO implements Serializable {

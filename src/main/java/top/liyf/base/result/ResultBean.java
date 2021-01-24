@@ -7,7 +7,6 @@ import java.io.Serializable;
 
 /**
  * @author liyf
- * Created in 2020-05-02
  */
 @Data
 public class ResultBean<T> implements Serializable {

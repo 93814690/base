@@ -4,7 +4,6 @@ import lombok.Data;
 
 /**
  * @author liyf
- * Created in 2020-05-02
  */
 @Data
 public class BaseQuery {

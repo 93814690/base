@@ -7,7 +7,6 @@ import java.lang.annotation.Target;
 
 /**
  * @author liyf
- * Created in 2020-05-02
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

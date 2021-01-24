@@ -33,3 +33,4 @@ spring:
         enabled: true
         url-pattern: /*
         exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
+        principal-session-name: user
