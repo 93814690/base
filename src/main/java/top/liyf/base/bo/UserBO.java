@@ -17,6 +17,8 @@ public class UserBO implements Serializable {
 
     private String userName;
 
+    private List<String> roles;
+
     private List<String> userPermissions;
 
 }
