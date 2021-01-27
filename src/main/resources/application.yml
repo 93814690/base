@@ -3,7 +3,7 @@ server:
 
 spring:
   profiles:
-    active: dev
+    active: @profileActive@
   mvc:
     servlet:
       load-on-startup: 1

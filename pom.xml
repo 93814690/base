@@ -17,6 +17,7 @@
 
   <properties>
     <java.version>11</java.version>
+    <maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>
   </properties>
 
   <dependencies>
@@ -79,7 +80,33 @@
     </dependency>
   </dependencies>
 
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <properties>
+        <profileActive>dev</profileActive>
+      </properties>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+    <profile>
+      <id>test</id>
+      <properties>
+        <profileActive>test</profileActive>
+      </properties>
+    </profile>
+    <profile>
+      <id>prod</id>
+      <properties>
+        <profileActive>prod</profileActive>
+      </properties>
+    </profile>
+  </profiles>
+
   <build>
+    <finalName>ROOT##${maven.build.timestamp}</finalName>
+
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
@@ -94,6 +121,25 @@
         </configuration>
       </plugin>
     </plugins>
+
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <!--①-->
+        <excludes>
+          <exclude>application*.yml</exclude>
+        </excludes>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+        <!--②-->
+        <filtering>true</filtering>
+        <includes>
+          <include>application.yml</include>
+          <include>application-${profileActive}.yml</include>
+        </includes>
+      </resource>
+    </resources>
   </build>
 
 </project>
