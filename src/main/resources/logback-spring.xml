@@ -6,7 +6,7 @@
     <!-- 项目名 -->
     <property name="APP_NAME" value="base"/>
     <!-- 日志路径 -->
-    <property name="LOG_HOME_PATH" value="/home/logback/${APP_NAME}"/>
+    <property name="LOG_HOME_PATH" value="/data/logback/${APP_NAME}"/>
     <!-- 本地日志路径 -->
     <property name="LOCAL_LOG" value="C:/logback/${APP_NAME}"/>
 
@@ -46,15 +46,8 @@
         </root>
     </springProfile>
 
-    <!-- 测试环境 -->
-    <springProfile name="test">
-        <root level="INFO">
-            <appender-ref ref="file" />
-        </root>
-    </springProfile>
-
-    <!-- 生产环境 -->
-    <springProfile name="prod">
+    <!-- 测试,生产 环境 -->
+    <springProfile name="test,prod">
         <root level="INFO">
             <appender-ref ref="file" />
         </root>
